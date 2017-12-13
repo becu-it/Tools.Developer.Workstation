@@ -1,5 +1,6 @@
 function ChocolateyInstall
-	iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+	New-Item c:\helloVMExt.txt -type file
+	#iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 }
 
 function InstallSoftware{
@@ -24,7 +25,7 @@ function RegisterTFSWorkspace{
 }
 
 ChocolateyInstall
-InstallSoftware
+#InstallSoftware
 #RegisterNuGetSource
 #CopyHostsFile
 #RegisterTFSWorkspace
