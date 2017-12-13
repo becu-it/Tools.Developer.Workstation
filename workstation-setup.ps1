@@ -1,6 +1,6 @@
 function ChocolateyInstall{
 	New-Item c:\helloVMExt.txt -type file
-	FindPackage -Name Chocolatey | Install-Package
+	Find-Package -Name Chocolatey | Install-Package
 }
 
 function InstallSoftware{
