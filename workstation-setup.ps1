@@ -1,7 +1,7 @@
 function ChocolateyInstall{
 	New-Item c:\helloVMExt.txt -type file
 	iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1')) 
-	SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
+	[Environment]::SetEnvironmentVariable("Path", $env:Path + ";%ALLUSERSPROFILE%\chocolatey\bin", [EnvironmentVariableTarget]::Machine)
 }
 
 function InstallSoftware{
