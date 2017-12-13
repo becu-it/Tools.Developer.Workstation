@@ -1,11 +1,5 @@
-function ChocolateyCheck{
-    $choco = choco --version 2>&1
-    if($choco -contains 'not recognized')
-    {
-        Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
-    }else{
-        #"Chocolatey found on the machine."
-    }    
+function ChocolateyInstall
+	iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 }
 
 function InstallSoftware{
@@ -29,7 +23,7 @@ function RegisterTFSWorkspace{
     tf workspace /new BECUPP /server:http://projectspp/tfs/BECU /comment:"BECUPreProd" /noprompt 
 }
 
-ChocolateyCheck
+ChocolateyInstall
 InstallSoftware
 #RegisterNuGetSource
 #CopyHostsFile
