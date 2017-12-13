@@ -1,6 +1,6 @@
 function ChocolateyInstall{
 	New-Item c:\helloVMExt.txt -type file
-	#iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+	iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 }
 
 function InstallSoftware{
